@@ -10,4 +10,4 @@ RUN mkdir -p ~/.ssh && chmod 700 ~/.ssh
 #Add Minio client
 RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc
 RUN chmod +x mc
-ENV PATH="$(pwd)+/mc:${PATH}"
+ENV PATH="/mc:$PATH"

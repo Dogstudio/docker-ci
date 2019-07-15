@@ -6,3 +6,8 @@ RUN mkdir -p /cache/apk && ln -s /cache/apk /etc/apk/cache
 RUN which ssh-agent || ( apk add --update openssh )
 RUN eval $(ssh-agent -s)
 RUN mkdir -p ~/.ssh && chmod 700 ~/.ssh
+
+#Add Minio client
+RUN wget https://dl.min.io/client/mc/release/linux-amd64/mc
+RUN chmod +x mc
+RUN export PATH=$PATH:$(pwd)+mc
